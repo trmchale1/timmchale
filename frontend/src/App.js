@@ -5,18 +5,18 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        world: "World!"
+        tim: "Tim!"
     };
   }
 
   componentDidMount() {
-      fetch('/api/world')
+      fetch('/api/tim')
           .then(response => response.json())
-          .then(response => this.setState({'world': response.world}))
+          .then(response => this.setState({'tim': response.tim}))
   }
 
   render() {
-    return <h1>Hello {this.state.world}</h1>;
+    return <h1>Hello {this.state.tim}</h1>;
   }
 
 }
