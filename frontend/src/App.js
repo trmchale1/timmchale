@@ -10,9 +10,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-      fetch('/api/tim')
+      fetch('/api/')
           .then(response => response.json())
-          .then(response => this.setState({'tim': response.tim}))
+          .then(response => this.setState({'tim': response}))
   }
 
   render() {
