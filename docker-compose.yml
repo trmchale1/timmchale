@@ -3,12 +3,25 @@ version: '3.8'
 services:
 
   backend:
-    build: ./backend
-    command: uvicorn app.main:app --root-path /api --proxy-headers --host 0.0.0.0 --port 8000
+    build: 
+      context: ./backend/
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - "127.0.0.1:8000:8000"
+    expose:
+      - 8000
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
 
   frontend:
-    build: ./frontend
+    build: 
+      context: ./frontend/
+      dockerfile: ./Dockerfile
+    restart: always
     ports:
-      - "3000:3000"
+      - "127.0.0.1:3000:3000"
     depends_on:
       - backend
+    tty: true
+    command: npm start
+
