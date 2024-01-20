@@ -23,5 +23,7 @@ services:
     depends_on:
       - backend
     tty: true
+    volumes:
+      - /app/data
     command: npm start
 
