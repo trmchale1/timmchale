@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Navbar from "./Navbar.js";
+import Art from "./Art.js";
+import Home from "./Home.js";
 
-function App() {
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+
+
+class App extends Component {
+  render() {
   return (
-    <div style={{ textAlign: 'center' }}>
-      <header>
-        <p>
-          My name is Tim, this is my website.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+    <Router>
+    <div>
+      <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/art' element={<Art />} />
+      </Routes>
     </div>
-  );
+    </Router>
+    );
+  }
 }
 
 export default App;
