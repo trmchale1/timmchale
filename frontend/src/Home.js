@@ -8,7 +8,7 @@ import Image_turner from './Image_turner'
 class Home extends Component {
   render() {
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{ textAlign: 'center' }} >
       <header>
         <p>
           Tim's Website

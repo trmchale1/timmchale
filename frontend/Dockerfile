@@ -4,8 +4,6 @@ WORKDIR /app
 
 COPY ./ /app/
 
-RUN npm install -g serve
-
-RUN serve -s build
+RUN npm install 
 
 EXPOSE 3000
